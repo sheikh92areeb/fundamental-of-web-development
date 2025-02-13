@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - FORMS</title>
+</head>
+<body>
+    <h1>Student Detail Form</h1>
+
+
+    <!-- 'form' tag is used to define form in html -->
+    <!-- it has many 'input' elements inside -->
+    <form action="">
+
+        <!-- 'label' tag is used to define the label of input -->
+        <label for="name">Full Name: </label>
+        <!-- 'input' tag is used to take user details -->
+        <!-- input has many types and has many attributes -->
+        <!-- 'text' type is used for simple text -->
+        <input type="text" name="name" id="name" placeholder="Enter Your Name">
+        <br><br>
+        <label for="fname">Father Name: </label>
+        <input type="text" name="fname" id="fname" placeholder="Enter Your Father Name">
+        <br><br>
+        <label for="phone">Phone: </label>
+        <!-- 'number' type is used for numbers input -->
+        <!-- like phone mobile age marks etc -->
+        <input type="number" name="phone" id="phone" placeholder="Enter your Phone Number">
+        <br><br>
+        <label for="gender">Gender:</label>
+        <!-- 'radio' type is used for multiple options -->
+        <!-- but only one is selected at once -->
+        <input type="radio" name="gender" id="male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female">
+        <label for="female">Female</label>
+        <br><br>
+        <!-- 'checkbox' type also used for multiple options -->
+        <!-- but more than one option is selected at once -->
+        <label for="subjects">Subjects: </label>
+        <input type="checkbox" name="subjects" id="eng">
+        <label for="eng">English</label>
+        <input type="checkbox" name="subjects" id="math">
+        <label for="math">Math</label>
+        <input type="checkbox" name="subjects" id="sci">
+        <label for="sci">Science</label>
+        <br><br>
+        <label for="class">Class: </label>
+        <!-- 'select' tag is used for making multiple options list as dropdown -->
+        <select name="class" id="class">
+            <!-- 'option' tag is used as list items of 'select' tag -->
+            <option value="1">Class 1</option>
+            <option value="2">Class 2</option>
+            <option value="3">Class 3</option>
+            <option value="4">Class 4</option>
+        </select>
+        <br><br>
+        <label for="add">Address: </label><br>
+        <!-- 'textarea' tag is used for big text or paragraph -->
+        <textarea name="add" id="add" rows="5" cols="40" placeholder="Enter your address"></textarea>
+        <br><br>
+        <!-- 'button' type is used for making buttons -->
+        <input type="button" value="Submit">
+    </form>
+</body>
+</html>
