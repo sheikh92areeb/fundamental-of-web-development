@@ -14,4 +14,9 @@ card.png is a file which contains a card Image. Write html and css code to desig
 
 ## Exercise 3
 ### multicolor website
-Create a multicolor website which can change color using CSS Variables
+Create a multicolor website which can change color using CSS Variables.
+
+
+## Exercise 4
+### Design Layout
+Design a web layout which contains navbar, main box, 2 boxes in main box, second box with some text and border radius and footer. 
