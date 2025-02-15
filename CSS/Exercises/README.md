@@ -10,3 +10,8 @@ Write html and css code to style a paragraph inside a div which contains 5 other
 ## Exercise 2
 ### Design Card
 card.png is a file which contains a card Image. Write html and css code to design this card.
+
+
+## Exercise 3
+### multicolor website
+Create a multicolor website which can change color using CSS Variables
