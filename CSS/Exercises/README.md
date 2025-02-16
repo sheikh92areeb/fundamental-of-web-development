@@ -30,3 +30,8 @@ Design a website navbar with the help of flexbox.
 ## Exercise 6
 ### Grid Layout
 Design a body content of Exercise 5 website using css grid.
+
+
+## Exercise 7
+### Bounce Animation
+You have given a file animation.html create an animation in this file in which the ball is moving to the end with bouncing.
