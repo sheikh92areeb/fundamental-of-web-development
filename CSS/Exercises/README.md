@@ -25,3 +25,8 @@ Design a web layout which contains navbar, main box, 2 boxes in main box, second
 ## Exercise 5
 ### Navbar using Flexbox
 Design a website navbar with the help of flexbox.
+
+
+## Exercise 6
+### Grid Layout
+Design a body content of Exercise 5 website using css grid.
