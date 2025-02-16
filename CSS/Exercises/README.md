@@ -20,3 +20,8 @@ Create a multicolor website which can change color using CSS Variables.
 ## Exercise 4
 ### Design Layout
 Design a web layout which contains navbar, main box, 2 boxes in main box, second box with some text and border radius and footer. 
+
+
+## Exercise 5
+### Navbar using Flexbox
+Design a website navbar with the help of flexbox.
