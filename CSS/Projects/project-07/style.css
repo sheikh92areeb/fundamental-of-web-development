@@ -6,7 +6,7 @@
     position: absolute;
     bottom: 0;
     left: 0; 
-    animation: animation 5s infinite ease;
+    animation: animateX 3s linear infinite, animateY 1s ease-out infinite alternate;
 }
 
 .container {
@@ -16,9 +16,20 @@
     background-color: blue;
 }
 
-@keyframes animation {
-    20% { transform: translateX(250px) translateY(-200px);}
-    40% { transform: translateX(500px) translateY(0px); }
-    80% { transform: translateX(750px) translateY(-200px);}
-    100% { transform: translateX(1000px) translateY(0px); }
+@keyframes animateX {
+    from{
+        left: 0;
+    }
+    to{
+        left: 100%;
+    }
+}
+
+@keyframes animateY {
+   from{
+        bottom: 0;
+    }
+    to{
+        bottom: 100% ;
+    }
 }
