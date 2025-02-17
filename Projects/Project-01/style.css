@@ -39,7 +39,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 11px 143px;
+    padding: 11px 145px;
 }
 
 .btn {
@@ -134,4 +134,14 @@ nav {
     top: 49%;
     left: 50%;
     transform: translate(-50%, -10%);
+}
+
+section {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0 145px;
 }
