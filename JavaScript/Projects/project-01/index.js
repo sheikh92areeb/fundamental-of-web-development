@@ -38,12 +38,3 @@ if (random <= 10) {
     result = calculate(m,n,o);
     console.log(result);
 }
-
-
-// const faultyOps = { "+": "-", "-": "/", "*": "+", "/": "**" };
-// const correctOps = { "+": "+", "-": "-", "*": "*", "/": "/" };
-
-
-// let chosenOp = random <= 10 ? faultyOps[o] : correctOps[o];
-// result = eval(`${m} ${chosenOp} ${n}`);
-// console.log(result);
