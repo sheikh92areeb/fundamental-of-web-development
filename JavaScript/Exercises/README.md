@@ -14,3 +14,11 @@ This faulty calculator does following:
     -   "-" ---> "/"
     -   "/" ---> "**"
 3. It performs wrong operation 10% of the times.
+
+## Exercise 2
+### Business Name Generator
+Create a business name generator by combining list of adjectives, shop name and another word
+
+-   Adjectives: (Crazy, Amazing, Fire)
+-   Shop Name: (Engine, Foods, Garments)
+-   Another Word: (Bros, Limited, Hub)
