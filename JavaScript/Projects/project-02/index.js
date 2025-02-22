@@ -2,17 +2,9 @@ let random1 = Math.floor(Math.random() * 3) + 1;
 let random2 = Math.floor(Math.random() * 3) + 1;
 let random3 = Math.floor(Math.random() * 3) + 1;
 
-let adjective1 = "Crazy";
-let adjective2 = "Amazing";
-let adjective3 = "Fire";
-
-let shop1 = "Engine";
-let shop2 = "Foods";
-let shop3 = "Garments";
-
-let word1 = "Bros";
-let word2 = "Limited";
-let word3 = "Hub";
+let adjective1 = "Crazy", adjective2 = "Amazing", adjective3 = "Fire";
+let shop1 = "Engine", shop2 = "Foods", shop3 = "Garments";
+let word1 = "Bros", word2 = "Limited", word3 = "Hub";
 
 let selectAdj = "";
 let selectShop = "";
