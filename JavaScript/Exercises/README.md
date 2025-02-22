@@ -22,3 +22,7 @@ Create a business name generator by combining list of adjectives, shop name and 
 -   Adjectives: (Crazy, Amazing, Fire)
 -   Shop Name: (Engine, Foods, Garments)
 -   Another Word: (Bros, Limited, Hub)
+
+## Exercise 3
+### Factorial Calculate
+Write a program to calculate factorial of a number using reduce and using for loops
