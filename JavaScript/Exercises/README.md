@@ -26,3 +26,7 @@ Create a business name generator by combining list of adjectives, shop name and 
 ## Exercise 3
 ### Factorial Calculate
 Write a program to calculate factorial of a number using reduce and using for loops
+
+## Exercise 4
+### Color The Boxes
+Given 5 boxes, Assign a random color and a random background to each box using DOM concepts
