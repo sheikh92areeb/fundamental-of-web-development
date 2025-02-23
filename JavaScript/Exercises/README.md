@@ -30,3 +30,31 @@ Write a program to calculate factorial of a number using reduce and using for lo
 ## Exercise 4
 ### Color The Boxes
 Given 5 boxes, Assign a random color and a random background to each box using DOM concepts
+
+## Exercise 5
+### Dynamic Website Builder
+you can create a function which create a card and every time function is called it insert card into html.
+```html
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <div class="container">
+                
+            </div>
+            <script src="script.js"></script>
+        </body>
+    </html>
+```
+
+```JS
+    function createCard(videoTitle, creatorName, views, publishDate, duration, thumbnail){
+        // Finish this function
+    }
+
+    createCard("Video 1", "XYZ", 560000, 7, "31:22", "thumbnail link")
+```
