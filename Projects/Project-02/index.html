@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
+
 <body>
     <div class="container flex bg-black">
         <div class="left">
@@ -37,7 +42,50 @@
 
         </div>
 
-        <div class="right border"></div>
+        <div class="right bg-grey">
+            <div class="header p-1">
+                <div class="nav flex">
+                    <img class="invert" src="img/left.svg" alt="left">
+                    <img class="invert" src="img/right.svg" alt="right">
+                </div>
+                <div class="buttons">
+                    <button>Signup</button>
+                    <button>Login</button>
+                </div>
+            </div>
+            <div class="spotify-playlists">
+                <h1>Soptify Playlists</h1>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="play">
+                            <svg width="15" height="15" viewBox="0 0 20 24" fill="black"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="img/cover.jpg" alt="Card Image">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to Boost your need and fill you with happiness</p>
+                    </div>
+                    <div class="card">
+                        <div class="play">
+                            <svg width="15" height="15" viewBox="0 0 20 24" fill="black"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <img src="img/cover.jpg" alt="Card Image">
+                        <h2>Happy Hits!</h2>
+                        <p>Hits to Boost your need and fill you with happiness</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

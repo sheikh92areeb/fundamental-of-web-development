@@ -14,43 +14,49 @@ body {
 
 .left {
     width: 25vw;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .right {
     width: 75vw;
+    margin: 16px 0;
 }
 
 .home {
-    min-height: 20vh;
+    min-height: 16vh;
 }
 
 .home ul li {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     width: 15px;
     list-style: none;
     padding-top: 14px;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .library {
-    min-height: 80vh;
+    min-height: 75vh;
     position: relative;
 }
 
 .heading {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     width: 100%;
     padding-top: 14px;
-    font-weight: bold;
     font-size: 13px;
 }
 
+.heading h2 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .heading img {
-    width:30px;
+    width:24px;
 }
 
 .footer {
@@ -59,9 +65,83 @@ body {
     flex-wrap: wrap;
     gap: 13px;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
 }
 
 .footer a {
     color: grey;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(49 48 48);
+}
+
+.nav {
+    gap: 15px;
+}
+.nav img {
+    width: 10px;
+}
+
+.spotify-playlists {
+    padding: 16px;
+}
+
+.spotify-playlists h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #252525;
+    cursor: pointer;
+    position: relative;
+}
+
+.card > img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.card h2 {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.card p {
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.play {
+    width: 30px;
+    height: 30px;
+    background-color: #1fdf64;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 175px;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.card:hover .play {
+    top: 150px;
+    opacity: 1;
 }
