@@ -19,7 +19,7 @@ body {
 
 .right {
     width: 75vw;
-    margin: 16px 0;
+    margin: 16px 5px 0 0;
 }
 
 .home {
@@ -74,23 +74,58 @@ body {
 
 .header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: rgb(49 48 48);
 }
 
 .nav {
-    gap: 15px;
+    gap: 5px;
 }
+
+.nav .nav-item {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 .nav img {
-    width: 10px;
+    width: 12px;
+    height: 12px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.buttons button:last-child,
+.buttons button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
 }
 
 .spotify-playlists {
-    padding: 16px;
+    padding: 10px 16px;
 }
 
 .spotify-playlists h1 {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
@@ -106,22 +141,27 @@ body {
     border-radius: 5px;
     background-color: #252525;
     cursor: pointer;
+}
+
+.card-img {
+    width: 100%;
+    text-align: center;
     position: relative;
 }
 
-.card > img {
-    width: 100%;
+.card-img img {
+    width: 170px;
     object-fit: contain;
     border-radius: 5px;
 }
 
 .card h2 {
-    padding-top: 10px;
-    font-size: 20px;
+    padding-top: 8px;
+    font-size: 18px;
 }
 
 .card p {
-    padding-top: 10px;
+    padding-top: 8px;
     font-size: 14px;
 }
 
@@ -136,12 +176,12 @@ body {
     justify-content: center;
     position: absolute;
     right: 20px;
-    top: 175px;
+    bottom: -15px;
     opacity: 0;
     transition: all 0.5s ease-out;
 }
 
 .card:hover .play {
-    top: 150px;
+    bottom: 10px;
     opacity: 1;
 }
