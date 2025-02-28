@@ -20,6 +20,7 @@ body {
 .right {
     width: 75vw;
     margin: 16px 5px 0 0;
+    position: relative;
 }
 
 .home {
@@ -107,6 +108,7 @@ body {
     padding: 8px 16px;
     border-radius: 20px;
     border: 1px solid transparent;
+    font-weight: bold;
     background-color: black;
     color: white;
     cursor: pointer;
@@ -130,6 +132,8 @@ body {
 }
 
 .card-container {
+    max-height: 80vh;
+    overflow: auto;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -184,4 +188,18 @@ body {
 .card:hover .play {
     bottom: 10px;
     opacity: 1;
+}
+
+.playbar {
+    width: 100%;
+    padding: 12px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(103, 182, 103);
+}
+
+.songs-btns {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
 }
