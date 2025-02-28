@@ -49,6 +49,7 @@ body {
     width: 100%;
     padding-top: 14px;
     font-size: 13px;
+    margin-bottom: 15px;
 }
 
 .heading h2 {
@@ -202,4 +203,49 @@ body {
     display: flex;
     justify-content: center;
     gap: 16px;
+}
+
+.song-list {
+    height: 300px;
+    overflow: auto;
+}
+
+.song-list ul li {
+    list-style: decimal;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 4px;
+    cursor: pointer;
+    border: 1px solid white;
+    margin: 12px 5px 12px 0;
+}
+.song-list ul li .info {
+    width: 70%;
+    display: flex;
+    gap: 4px;
+}
+
+.song-list ul li .info img {
+    width: 30px;
+}
+
+.song-list ul li .info .song-detail div {
+    font-size: 14px;
+    text-overflow: ellipsis;
+}
+
+.play-now {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-now span {
+    font-size: 12px;
+    padding-right: 4px;
+}
+
+.play-now img {
+    width: 20px;
 }
