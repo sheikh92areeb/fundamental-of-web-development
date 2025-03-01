@@ -264,6 +264,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 10px;
+    cursor: pointer;
     z-index: 1;
 }
 
@@ -277,4 +278,11 @@ body {
     left: 0;
     z-index: 2;
     transition: left 0.5s;
+}
+
+.song-play {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto ;
 }
