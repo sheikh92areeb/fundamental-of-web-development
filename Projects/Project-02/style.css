@@ -305,6 +305,7 @@ body {
     position: absolute;
     right: 20px;
     top: 25px;
+    display: none;
 }
 
 @media screen and (max-width: 1250px) {
@@ -316,7 +317,7 @@ body {
     .right {
         width: 100vw;
     }
-    .hamburger {
+    .hamburger, .close {
         display: block;
     }
 }
