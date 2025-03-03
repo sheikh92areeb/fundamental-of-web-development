@@ -189,6 +189,10 @@ body {
     transition: all 0.5s ease-out;
 }
 
+.card:hover {
+    background-color: #000;
+}
+
 .card:hover .play {
     bottom: 10px;
     opacity: 1;
@@ -308,12 +312,21 @@ body {
     display: none;
 }
 
+.vol-time, .volumn {
+    gap: 20px;
+}
+
+
 @media screen and (max-width: 1250px) {
     .left {
         position: absolute;
         width: 300px;
         left: -100%;
-        z-index: 1;
+        z-index: 3;
+        padding: 0;
+    }
+    .home, .library {
+        margin: 0 !important;
     }
     .right {
         width: 100vw;

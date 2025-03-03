@@ -36,7 +36,7 @@ async function getSong() {
 
 const playSong = (track, pause = false) => {
     currentSong.src = `/Projects/Project-02/songs/${track}`
-    if (!pause){
+    if (!pause) {
         currentSong.play()
         play.src = "img/pause.svg";
     }
@@ -49,7 +49,7 @@ async function main() {
     // Get the list of songs
     songs = await getSong();
     playSong(songs[0], true)
-    
+
     // Show All the songs in playlist
     let songUL = document.querySelector(".song-list").getElementsByTagName("ul")[0];
 
@@ -76,7 +76,7 @@ async function main() {
         })
     })
 
-    play.addEventListener("click", ()=> {
+    play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
             play.src = "img/pause.svg";
@@ -85,7 +85,7 @@ async function main() {
             currentSong.pause()
             play.src = "img/circle-play-regular.svg";
         }
-    
+
     })
 
 
@@ -100,26 +100,40 @@ async function main() {
         currentSong.currentTime = ((currentSong.duration) * percent) / 100
     })
 
-    document.querySelector("#hamburger").addEventListener("click", ()=> {
+    document.querySelector("#hamburger").addEventListener("click", () => {
         document.querySelector(".left").style.left = "0";
     })
 
-    document.querySelector("#close").addEventListener("click", ()=> {
+    document.querySelector("#close").addEventListener("click", () => {
         document.querySelector(".left").style.left = "-100%";
     })
 
     previous.addEventListener("click", () => {
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
-        if ((index - 1) >= 0){
+        if ((index - 1) >= 0) {
             playSong(songs[index - 1])
         }
     })
 
     next.addEventListener("click", () => {
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
-        if ((index + 1) < songs.length){
+        if ((index + 1) < songs.length) {
             playSong(songs[index + 1])
         }
     })
+
+
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        console.log("Setting volume to", e.target.value, "/ 100");
+
+        currentSong.volume = parseInt(e.target.value) / 100;
+
+        let img = document.querySelector(".volumn > img");
+        if (currentSong.volume > 0) {
+            img.src = img.src.replace("mute.svg", "volume.svg");
+        } else {
+            img.src = img.src.replace("volume.svg", "mute.svg");
+        }
+    });
 }
 main();
