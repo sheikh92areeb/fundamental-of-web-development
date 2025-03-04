@@ -27,35 +27,17 @@ async function getSong(folder) {
     let div = document.createElement("div");
     div.innerHTML = response;
     let as = div.getElementsByTagName("a");
-    let songs = [];
+    songs = [];
     for (let i = 0; i < as.length; i++) {
         const element = as[i];
         if (element.href.endsWith(".mp3")) {
             songs.push(element.href.split(`${folder}`)[1].replace("/",""));
         }
     }
-    return songs;
-}
-
-const playSong = (track, pause = false) => {
-    track = track.replace(/^\/+/, "");
-    currentSong.src = `/Projects/Project-02/songs/${currFolder}/${track}`;
-    if (!pause) {
-        currentSong.play();
-        play.src = "img/pause.svg";
-    }
-    document.querySelector(".song-info").innerHTML = decodeURI(track);
-    document.querySelector(".song-time").innerHTML = "00:00 / 00:00";
-};
-
-async function main() {
-    // Get the list of songs
-    songs = await getSong("myalbum");
-    playSong(songs[0], true)
 
     // Show All the songs in playlist
     let songUL = document.querySelector(".song-list").getElementsByTagName("ul")[0];
-
+    songUL.innerHTML = "";
     for (const song of songs) {
         songUL.innerHTML = songUL.innerHTML + `<li>
                             <div class="info">
@@ -78,6 +60,27 @@ async function main() {
             playSong(e.querySelector(".song-detail").firstElementChild.innerHTML.trim())
         })
     })
+
+    return songs
+
+}
+
+const playSong = (track, pause = false) => {
+    currentSong.src = `/Projects/Project-02/songs/${currFolder}/${track}`;
+    if (!pause) {
+        currentSong.play();
+        play.src = "img/pause.svg";
+    }
+    document.querySelector(".song-info").innerHTML = decodeURI(track);
+    document.querySelector(".song-time").innerHTML = "00:00 / 00:00";
+};
+
+async function main() {
+    // Get the list of songs
+    await getSong("myalbum");
+    playSong(songs[0], true)
+
+    
 
     play.addEventListener("click", () => {
         if (currentSong.paused) {
@@ -139,5 +142,16 @@ async function main() {
             img.src = img.src.replace("volume.svg", "mute.svg");
         }
     });
+
+
+     // Load the playlist whenever card is clicked
+     Array.from(document.getElementsByClassName("card")).forEach(e => { 
+        e.addEventListener("click", async item => {
+            console.log(item.currentTarget.dataset.folder)
+            songs = await getSong(`${item.currentTarget.dataset.folder}`) 
+            playSong(songs[0])
+
+        })
+    })
 }
 main();
