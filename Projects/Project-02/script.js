@@ -2,7 +2,8 @@ console.log("Hello start writing javascript")
 
 let currentSong = new Audio();
 let songs;
-let folder;
+let currFolder;
+
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -20,6 +21,7 @@ function secondsToMinutesSeconds(seconds) {
 
 
 async function getSong(folder) {
+    currFolder = folder
     let a = await fetch(`http://127.0.0.1:3000/Projects/Project-02/songs/${folder}`);
     let response = await a.text();
     let div = document.createElement("div");
@@ -29,26 +31,26 @@ async function getSong(folder) {
     for (let i = 0; i < as.length; i++) {
         const element = as[i];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/songs/${folder}`)[1]);
+            songs.push(element.href.split(`${folder}`)[1].replace("/",""));
         }
     }
     return songs;
 }
 
 const playSong = (track, pause = false) => {
-    currentSong.src = `/Projects/Project-02/songs/${folder}${track}`
+    track = track.replace(/^\/+/, "");
+    currentSong.src = `/Projects/Project-02/songs/${currFolder}/${track}`;
     if (!pause) {
-        currentSong.play()
+        currentSong.play();
         play.src = "img/pause.svg";
     }
-    document.querySelector(".song-info").innerHTML = decodeURI(track)
-    document.querySelector(".song-time").innerHTML = "00:00 / 00:00"
-}
-
+    document.querySelector(".song-info").innerHTML = decodeURI(track);
+    document.querySelector(".song-time").innerHTML = "00:00 / 00:00";
+};
 
 async function main() {
     // Get the list of songs
-    songs = await getSong("ncs");
+    songs = await getSong("myalbum");
     playSong(songs[0], true)
 
     // Show All the songs in playlist
@@ -118,6 +120,7 @@ async function main() {
 
     next.addEventListener("click", () => {
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        console.log(index)
         if ((index + 1) < songs.length) {
             playSong(songs[index + 1])
         }

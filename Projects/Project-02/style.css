@@ -246,6 +246,13 @@ body {
     text-overflow: ellipsis;
 }
 
+.song-detail div:first-child {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 140px;
+}
+
 .play-now {
     width: 30%;
     display: flex;
@@ -260,6 +267,13 @@ body {
 
 .play-now img {
     width: 20px;
+}
+
+.song-info {
+    width: 240px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .seekbar {
