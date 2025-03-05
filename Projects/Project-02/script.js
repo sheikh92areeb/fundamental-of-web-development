@@ -31,7 +31,7 @@ async function getSong(folder) {
     for (let i = 0; i < as.length; i++) {
         const element = as[i];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`${folder}`)[1].replace("/",""));
+            songs.push(element.href.split(`${folder}`)[1].replace("/", ""));
         }
     }
 
@@ -83,13 +83,15 @@ async function displayAlbums() {
     div.innerHTML = response;
     let anchors = div.getElementsByTagName("a")
     let cardCon = document.querySelector(".card-container")
-    Array.from(anchors).forEach(async e => {
+    let array = Array.from(anchors)
+    for (let index = 0; index < array.length; index++) {
+        const e = array[index]
+
         if (e.href.includes("/songs")) {
             let folder = e.href.split("/").slice(-2)[0]
             let a = await fetch(`http://127.0.0.1:3000/Projects/Project-02/songs/${folder}/info.json`);
             let response = await a.json();
-            console.log(response)
-            cardCon.innerHTML = cardCon.innerHTML + `<div data-folder="ncs" class="card">
+            cardCon.innerHTML = cardCon.innerHTML + `<div data-folder="${folder}" class="card">
                         <div class="card-img">
                             <img src="/Projects/Project-02/songs/${folder}/cover.jpg" alt="Card Image">
                             <div class="play">
@@ -104,6 +106,15 @@ async function displayAlbums() {
                         <p>${response.description}</p>
                     </div>`
         }
+    }
+
+     // Load the playlist whenever card is clicked
+     Array.from(document.getElementsByClassName("card")).forEach(e => {
+        e.addEventListener("click", async item => {
+            songs = await getSong(`${item.currentTarget.dataset.folder}`)
+            playSong(songs[0])
+
+        })
     })
 }
 
@@ -179,14 +190,21 @@ async function main() {
     });
 
 
-     // Load the playlist whenever card is clicked
-     Array.from(document.getElementsByClassName("card")).forEach(e => { 
-        e.addEventListener("click", async item => {
-            console.log(item.currentTarget.dataset.folder)
-            songs = await getSong(`${item.currentTarget.dataset.folder}`) 
-            playSong(songs[0])
 
-        })
+     // Add event listener to mute the track
+     document.querySelector(".volumn>img").addEventListener("click", e=>{ 
+        if(e.target.src.includes("volume.svg")){
+            e.target.src = e.target.src.replace("volume.svg", "mute.svg")
+            currentSong.volume = 0;
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 0;
+        }
+        else{
+            e.target.src = e.target.src.replace("mute.svg", "volume.svg")
+            currentSong.volume = .10;
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 10;
+        }
+
     })
+   
 }
 main();

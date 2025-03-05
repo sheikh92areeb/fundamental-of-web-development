@@ -330,6 +330,10 @@ body {
     gap: 20px;
 }
 
+.volumn, .range input {
+    cursor: pointer;
+}
+
 
 @media screen and (max-width: 1250px) {
     .left {
