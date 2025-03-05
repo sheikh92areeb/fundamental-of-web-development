@@ -75,12 +75,47 @@ const playSong = (track, pause = false) => {
     document.querySelector(".song-time").innerHTML = "00:00 / 00:00";
 };
 
+async function displayAlbums() {
+    console.log("displaying albums")
+    let a = await fetch(`http://127.0.0.1:3000/Projects/Project-02/songs/`);
+    let response = await a.text();
+    let div = document.createElement("div")
+    div.innerHTML = response;
+    let anchors = div.getElementsByTagName("a")
+    let cardCon = document.querySelector(".card-container")
+    Array.from(anchors).forEach(async e => {
+        if (e.href.includes("/songs")) {
+            let folder = e.href.split("/").slice(-2)[0]
+            let a = await fetch(`http://127.0.0.1:3000/Projects/Project-02/songs/${folder}/info.json`);
+            let response = await a.json();
+            console.log(response)
+            cardCon.innerHTML = cardCon.innerHTML + `<div data-folder="ncs" class="card">
+                        <div class="card-img">
+                            <img src="/Projects/Project-02/songs/${folder}/cover.jpg" alt="Card Image">
+                            <div class="play">
+                                <svg width="15" height="15" viewBox="0 0 20 24" fill="black"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" stroke-width="1.5"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h2>${response.title}</h2>
+                        <p>${response.description}</p>
+                    </div>`
+        }
+    })
+}
+
+
+
+
 async function main() {
     // Get the list of songs
     await getSong("myalbum");
     playSong(songs[0], true)
 
-    
+    displayAlbums()
 
     play.addEventListener("click", () => {
         if (currentSong.paused) {
