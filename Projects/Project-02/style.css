@@ -136,7 +136,7 @@ body {
 }
 
 .card-container {
-    max-height: 80vh;
+    max-height: 65vh;
     overflow: auto;
     display: flex;
     gap: 10px;
